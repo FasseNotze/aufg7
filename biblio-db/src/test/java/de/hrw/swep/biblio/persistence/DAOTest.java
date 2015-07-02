@@ -1,10 +1,8 @@
 package de.hrw.swep.biblio.persistence;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import java.io.File;
-import java.util.Iterator;
 import java.util.Set;
 
 import org.dbunit.IDatabaseTester;
@@ -29,7 +27,7 @@ public class DAOTest {
   /**
    * Bringt die Datenbank in einen definierten Ausgangszustand
    * 
-   * @throws Exception
+   * @throws Exception IllegalState falls Fehler auftritt
    */
   @Before
   public void setup() throws Exception {
