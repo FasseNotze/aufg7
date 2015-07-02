@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.io.File;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.dbunit.IDatabaseTester;
 import org.dbunit.JdbcDatabaseTester;
@@ -12,21 +14,22 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.hrw.swep.biblio.persistence.dto.BenutzerDTO;
-
+import de.hrw.swep.biblio.persistence.dto.BuchDTO;
 
 /**
  * Testklasse fuer den Datenbankzugriff
+ * 
  * @author M. Friedrich
  *
  */
 public class DAOTest {
 
   IDatabaseTester databaseTester;
-  
-  
+
   /**
    * Bringt die Datenbank in einen definierten Ausgangszustand
-   * @throws Exception 
+   * 
+   * @throws Exception
    */
   @Before
   public void setup() throws Exception {
@@ -53,15 +56,32 @@ public class DAOTest {
    */
   @Test
   public void testGetBenutzerByName() {
-    fail();
+    DAO dao = new DAO();
+    Set<BenutzerDTO> b = dao.getBenutzerByName("Adalbert Alt");
+
+    assertEquals(1, b.size());
+
+    for (BenutzerDTO user : b) {
+      assertEquals("Adalbert Alt", user.getName());
+      assertEquals("Normal", user.getStatus());
+      assertEquals(1, user.getId());
+    }
+
   }
 
-  /** 
+  /**
    * Testet das Abrufen aller Buecher eines Autors
    */
   @Test
   public void testGetBuchByAutor() {
-    fail();
+    DAO dao = new DAO();
+    Set<BuchDTO> b = dao.getBuchByAutor("Malte Mohn");
+
+    assertEquals(1, b.size());
+    for (BuchDTO book : b) {
+      assertEquals("Klatsch", book.getTitel());
+      assertEquals("Ausgeliehen", book.getStatus());
+    }
   }
 
   /**
@@ -69,6 +89,13 @@ public class DAOTest {
    */
   @Test
   public void testGetBuchByTitle() {
-    fail();
+    DAO dao = new DAO();
+    Set<BuchDTO> b = dao.getBuchByTitle("Klatsch");
+
+    assertEquals(1, b.size());
+    for (BuchDTO book : b) {
+      assertEquals("Malte Mohn", book.getAutor());
+      assertEquals("Ausgeliehen", book.getStatus());
+    }
   }
 }
