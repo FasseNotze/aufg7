@@ -8,7 +8,13 @@ import java.sql.DriverManager;
 
 import org.dbunit.IDatabaseTester;
 import org.dbunit.JdbcDatabaseTester;
+
+import org.dbunit.database.DatabaseConfig;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
+import org.dbunit.ext.hsqldb.HsqldbDataTypeFactory;
+
+import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
+
 
 /**
  * Erzeugt und initialisiert die Bibliotheks-Datenbank

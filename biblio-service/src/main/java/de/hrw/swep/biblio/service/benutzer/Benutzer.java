@@ -26,7 +26,11 @@ public class Benutzer {
 		super();
 		this.id = id;
 		this.name = name;
+<<<<<<< HEAD
+		this.gebuehren= new ArrayList<Gebuehr>();
+=======
 		this.gebuehren = new ArrayList<Gebuehr>();
+>>>>>>> refs/heads/biblio-db_changes
 		this.status = new Normal(this);
 	}
 	

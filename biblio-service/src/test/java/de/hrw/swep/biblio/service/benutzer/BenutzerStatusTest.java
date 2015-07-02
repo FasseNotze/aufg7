@@ -1,5 +1,9 @@
 package de.hrw.swep.biblio.service.benutzer;
 
+<<<<<<< HEAD
+import static org.junit.Assert.*;
+=======
+>>>>>>> refs/heads/biblio-db_changes
 
 import org.junit.Test;
 

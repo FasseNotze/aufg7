@@ -1,5 +1,4 @@
 package de.hrw.swep.biblio.persistence;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -10,11 +9,14 @@ import java.util.Set;
 import de.hrw.swep.biblio.persistence.dto.BenutzerDTO;
 import de.hrw.swep.biblio.persistence.dto.BuchDTO;
 import de.hrw.swep.biblio.persistence.dto.GebuehrDTO;
+
 /**
  * Zugriffsklasse für die Bibliotheks-Datenbank
+ * 
  * @author M. Friedrich
  *
  */
+
 public class DAO implements DBInterface {
 
   /**
@@ -140,5 +142,4 @@ public class DAO implements DBInterface {
     }
     return null;
   }
-
 }
